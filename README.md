@@ -72,4 +72,11 @@ If the service instance count is set to `n`, then `n` instances of the service w
   
   ![Compiling with mage on Windows](docs/images/windows-mages.jpg)
   
-  
+### 增加指定服务编译功能
+在根目录下增加文件
+specify-servers.yml
+格式如下：
+serviceBinaries:
+ - microservice-test
+
+如果不需要可以直接注解掉   
