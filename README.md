@@ -76,7 +76,12 @@ If the service instance count is set to `n`, then `n` instances of the service w
 在根目录下增加文件
 specify-servers.yml
 格式如下：
+```yaml
 serviceBinaries:
  - microservice-test
-
+```
 如果不需要可以直接注解掉   
+```yaml
+#serviceBinaries:
+# - microservice-test
+```
