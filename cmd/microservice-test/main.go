@@ -21,7 +21,7 @@ func main() {
 
 	// Generate a random port
 	rand.Seed(time.Now().UnixNano())
-	port := rand.Intn(65535-1024) + 1024
+	port := 87 + rand.Intn(87)
 
 	listener, err := net.Listen("tcp", fmt.Sprintf(":%d", port))
 	if err != nil {

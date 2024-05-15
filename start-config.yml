@@ -1,0 +1,6 @@
+serviceBinaries:
+  microservice-test: 2
+  wesleyGoodMorning: 1
+toolBinaries:
+  - helloworld
+maxFileDescriptors: 10000

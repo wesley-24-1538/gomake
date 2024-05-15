@@ -86,7 +86,6 @@ func StartToolsAndServices() {
 	CheckAndReportBinariesStatus()
 }
 
-// CompileForPlatform Main compile function
 func CompileForPlatform(platform string) {
 
 	PrintBlue(fmt.Sprintf("Compiling cmd for %s...", platform))
@@ -158,6 +157,9 @@ func compileDir(sourceDir, outputBase, platform string) []string {
 		if info.IsDir() || filepath.Base(path) != "main.go" {
 			return nil
 		}
+		if !IfSpecifyDirectoryOfCmd(path) {
+			return nil
+		}
 
 		wg.Add(1)
 		go func() {
@@ -206,6 +208,7 @@ func compileDir(sourceDir, outputBase, platform string) []string {
 }
 
 func Build() {
+
 	if _, err := os.Stat("start-config.yml"); err == nil {
 		InitForSSC()
 		KillExistBinaries()
